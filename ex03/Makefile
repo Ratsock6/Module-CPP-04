@@ -1,14 +1,9 @@
-NAME := polymorphisme
+NAME := polymorphisme2
 
 CFLAGS := -g -Werror -Wall -Wextra -std=c++98
 
 SRC :=	main.cpp \
-		Animal.cpp \
-		Cat.cpp \
-		Dog.cpp \
-		WrongAnimal.cpp \
-		WrongCat.cpp \
-		WrongDog.cpp
+		AMaterial.cpp
 OBJ := $(SRC:.cpp=.o)
 
 %.o:		%.cpp

@@ -1,39 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:47:45 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/04/29 12:37:38 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:33:46 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Dog.hpp"
 
-Cat::Cat(void): Animal("Cat")
+Dog::Dog(void): Animal("Dog")
 {
-	std::cout << GRAY << "Default constructor Cat called" << RESET << std::endl;
+	brain = new Brain();
+	std::cout << GRAY << "Default constructor Dog called" << RESET << std::endl;
 }
 
-Cat::Cat(Cat const &cat): Animal(cat)
+Dog::Dog(Dog const &dog): Animal(dog)
 {
-	std::cout << GRAY  << "Copy constructor Cat called" << RESET << std::endl;
+	std::cout << GRAY  << "Copy constructor Dog called" << RESET << std::endl;
 }
 
-Cat::~Cat(void)
+Dog::~Dog(void)
 {
-	std::cout << GRAY  << "destructor Cat called" << RESET << std::endl;
+	delete brain;
+	std::cout << GRAY  << "destructor Dog called" << RESET << std::endl;
 }
 
-void	Cat::makeSound(void) const
+void	Dog::makeSound(void) const
 {
-	std::cout << ORANGE << "Miaouuuuuu !" << RESET << std::endl;
+	std::cout << GREEN << "Wouf !" << RESET << std::endl;
 }
 
-Cat		&Cat::operator=(Cat const &cat)
+Dog		&Dog::operator=(Dog const &dog)
 {
-	*static_cast<Animal *>(this) = cat;
+	delete this->brain;
+	this->brain = new Brain(*dog.brain);
+	*static_cast<Animal *>(this) = dog;
 	return (*this);
 }

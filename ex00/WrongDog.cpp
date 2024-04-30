@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*   WrongDog.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 16:52:39 by marvin            #+#    #+#             */
-/*   Updated: 2024/04/29 12:40:52 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/04/29 12:43:24 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#include "WrongDog.hpp"
 
-WrongCat::WrongCat(void): WrongAnimal("wrongCat")
+WrongDog::WrongDog(void): WrongAnimal("wrongDog")
 {
-	std::cout << GRAY << "Default WrongCat constructor called" << RESET << std::endl;
+	std::cout << GRAY << "Default WrongDog constructor called" << RESET << std::endl;
 }
 
-WrongCat::WrongCat(WrongCat const &wrongCat): WrongAnimal(wrongCat)
+WrongDog::WrongDog(WrongDog const &wrongDog): WrongAnimal(wrongDog)
 {
-	std::cout << GRAY << "Copy constructor WrongCat called" << RESET << std::endl;
+	std::cout << GRAY << "Copy constructor WrongDog called" << RESET << std::endl;
 }
 
-WrongCat::~WrongCat(void)
+WrongDog::~WrongDog(void)
 {
-	std::cout << GRAY << "Destructor WrongCat called" << RESET << std::endl;
+	std::cout << GRAY << "Destructor WrongDog called" << RESET << std::endl;
 }
 
-void	WrongCat::makeSound(void) const
+void	WrongDog::makeSound(void) const
 {
-	std::cout << "Miaouuuuuu !" << std::endl;
+	std::cout << "Wouf !" << std::endl;
 }
 
-WrongCat		&WrongCat::operator=(WrongCat const &wrongCat)
+WrongDog		&WrongDog::operator=(WrongDog const &wrongDog)
 {
-	*static_cast<WrongAnimal *>(this) = wrongCat;
+	*static_cast<WrongAnimal *>(this) = wrongDog;
 	return (*this);
 }
