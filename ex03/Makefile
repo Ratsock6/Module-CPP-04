@@ -1,9 +1,11 @@
-NAME := polymorphisme2
+NAME := ex03
 
 CFLAGS := -g -Werror -Wall -Wextra -std=c++98
 
 SRC :=	main.cpp \
-		AMaterial.cpp
+		AMaterial.cpp \
+		ICharacter.cpp \
+		main.cpp
 OBJ := $(SRC:.cpp=.o)
 
 %.o:		%.cpp
