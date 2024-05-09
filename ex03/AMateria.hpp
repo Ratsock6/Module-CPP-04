@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*   AMaterial.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 16:14:14 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/09 15:01:39 by aallou-v         ###   ########.fr       */
+/*   Created: 2024/04/30 13:47:19 by aallou-v          #+#    #+#             */
+/*   Updated: 2024/05/09 14:50:58 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#pragma once
 
-Ice::Ice(void): AMateria("ice")
-{}
+#include <iostream>
+#include "ICharacter.hpp"
 
-Ice::~Ice() 
-{}
 
-Ice::Ice(const Ice &ice)
-{}
-
-Ice	&Ice::operator=(const Ice &ice)
+class	AMateria
 {
-	this->_type = ice._type;
-	return (*this);
-}
+	protected:
+		std::string	_type;
+	public:
+	AMateria(void);
+	AMateria(const AMateria &materia);
+	virtual ~AMateria();
+	AMateria &operator=(const AMateria &materia);
+	
+	AMateria(std::string const &type);
 
-void		Ice::use(ICharacter &target)
-{
-	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
-}
-
-AMateria*	Ice::clone() const
-{
-	return new Ice(*this);
-}
-
+	std::string const 	&getType() const;
+	virtual AMateria	*clone() const = 0;
+	virtual void		use(ICharacter &target);
+};

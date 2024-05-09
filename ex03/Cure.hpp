@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMaterial.hpp                                      :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/30 13:47:19 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/08 13:04:52 by aallou-v         ###   ########.fr       */
+/*   Created: 2024/05/09 15:12:15 by aallou-v          #+#    #+#             */
+/*   Updated: 2024/05/09 15:30:58 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
+#include "AMateria.hpp"
 #include "ICharacter.hpp"
 
-
-class	AMateria
+class Cure: public AMateria
 {
-	protected:
-		std::string	_type;
 	public:
-	AMateria(void);
-	AMateria(const AMateria &materia);
-	virtual ~AMateria();
-	AMateria &operator=(const AMateria &materia);
-	
-	AMateria(std::string const &type);
+		Cure();
+		~Cure();
+		Cure(const Cure &cure);
+		Cure	&operator=(const Cure &cure);
 
-	std::string const 	&getType() const;
-	virtual AMateria	*clone() const = 0;
-	virtual void		use(ICharacter &target);
+		virtual AMateria	*clone() const;
+		virtual void		use(ICharacter &target);
 };

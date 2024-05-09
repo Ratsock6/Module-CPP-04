@@ -6,14 +6,14 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 14:14:38 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/06 16:00:15 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/09 15:00:32 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
-#include "AMaterial.hpp"
+#include "AMateria.hpp"
 
 class	ICharacter
 {
