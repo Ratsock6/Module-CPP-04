@@ -6,13 +6,17 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 11:10:55 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/06/06 15:34:45 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/06 22:18:35 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "MateriaSource.hpp"
 
-MateriaSource::MateriaSource(void) {}
+MateriaSource::MateriaSource(void) {
+	for (int i = 0; i < 4; i++) {
+		inventory[i] = NULL;
+	}
+}
 
 MateriaSource::~MateriaSource(void) {
 	for (int i = 0; i < 4; i++)

@@ -6,15 +6,19 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 15:44:23 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/06/06 16:36:21 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/06 22:21:05 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
 
-Character::Character(void): name("Unamed"), inventory()
-{}
+Character::Character(void): name("Unamed")
+{
+	for (int i = 0; i < 4; i++) {
+		inventory[i] = NULL;
+	}
+}
 
 Character::Character(Character const &character)
 {
@@ -30,6 +34,9 @@ Character::~Character(void)
 Character::Character(std::string _name)
 {
 	name = _name;
+	for (int i = 0; i < 4; i++) {
+		inventory[i] = NULL;
+	}
 }
 
 Character			&Character::operator=(Character const &character)

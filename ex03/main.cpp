@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 13:15:19 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/06/06 16:29:55 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/06 22:24:16 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,14 @@
 
 int main(void) {
 	IMateriaSource	*src;
-	
+	Ice				*ice;
+	Cure			*cure;
+
 	src = new MateriaSource();
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
+	ice = new Ice();
+	cure = new Cure();
+	src->learnMateria(ice);
+	src->learnMateria(cure);
 
 	ICharacter	*me;
 	AMateria	*tmp;
@@ -39,5 +43,7 @@ int main(void) {
 	delete bob;
 	delete me;
 	delete src;
+	delete ice;
+	delete cure;
 	return 0;
 }
