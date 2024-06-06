@@ -6,11 +6,12 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 15:11:45 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/09 15:41:07 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/06 16:20:30 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
+#include "ICharacter.hpp"
 
 Cure::Cure(void): AMateria("cure")
 {}
@@ -18,12 +19,12 @@ Cure::Cure(void): AMateria("cure")
 Cure::~Cure() 
 {}
 
-Cure::Cure(const Cure &ice)
+Cure::Cure(const Cure &cure): AMateria(cure)
 {}
 
 Cure	&Cure::operator=(const Cure &cure)
 {
-	this->_type = cure._type;
+	this->type = cure.type;
 	return (*this);
 }
 

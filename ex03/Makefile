@@ -4,8 +4,11 @@ CFLAGS := -g -Werror -Wall -Wextra -std=c++98
 
 SRC :=	main.cpp \
 		AMateria.cpp \
-		ICharacter.cpp \
-		main.cpp
+		Character.cpp \
+		Cure.cpp \
+		Ice.cpp \
+		MateriaSource.cpp
+
 OBJ := $(SRC:.cpp=.o)
 
 %.o:		%.cpp

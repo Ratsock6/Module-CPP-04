@@ -6,20 +6,20 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 13:47:02 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/09 14:59:06 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/06 16:01:14 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
-AMateria::AMateria(std::string const &type)
+AMateria::AMateria(std::string const &_type)
 {
-	_type = type;
+	type = _type;
 }
 
 AMateria::AMateria()
 {
-	_type = "Unamed";
+	type = "Unamed";
 }
 
 AMateria::AMateria(const AMateria &materia)
@@ -29,19 +29,16 @@ AMateria::AMateria(const AMateria &materia)
 
 AMateria &AMateria::operator=(const AMateria &materia)
 {
-	this->_type = materia._type;
+	this->type = materia.type;
 	return (*this);
 }
 
 AMateria::~AMateria() {}
 
-std::string const &AMateria::getType() const
-{
-	return (_type);
+std::string const &AMateria::getType(void) const {
+	return (this->type);
 }
 
-AMateria	AMateria::*clone()
-{}
-
-void	AMateria::use(ICharacter &target)
-{}
+void AMateria::use(ICharacter &target) {
+	(void) target;
+}
